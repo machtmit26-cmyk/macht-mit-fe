@@ -30,7 +30,7 @@ const PendingApproval = () => {
 
   useEffect(() => {
     getPendingStudents();
-  }, []);
+  }, [getPendingStudents]);
 
   /* ================= APPROVE ================= */
   const approveStudent = async (id) => {

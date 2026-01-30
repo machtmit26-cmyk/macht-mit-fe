@@ -116,7 +116,7 @@ const RejectedStudents = () => {
   };
   useEffect(() => {
     getActiveStds();
-  }, []);
+  }, [getActiveStds]);
 
   return (
     <Box height={"65vh"}>
