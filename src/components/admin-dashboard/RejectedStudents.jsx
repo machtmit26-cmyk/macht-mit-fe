@@ -114,9 +114,10 @@ const RejectedStudents = () => {
       })
       .catch((err) => {});
   };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     getActiveStds();
-  }, [getActiveStds]);
+  }, []);
 
   return (
     <Box height={"65vh"}>

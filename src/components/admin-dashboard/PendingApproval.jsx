@@ -27,10 +27,10 @@ const PendingApproval = () => {
       console.error(err);
     }
   };
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     getPendingStudents();
-  }, [getPendingStudents]);
+  }, []);
 
   /* ================= APPROVE ================= */
   const approveStudent = async (id) => {
