@@ -1,8 +1,6 @@
-import React from "react"
 import Heading from "../../common/heading/Heading"
 import "./Hero.css"
 import { Link } from "react-router-dom"
-import logo from '../Logo.jpg';
 const Hero = () => {
   return (
     <>

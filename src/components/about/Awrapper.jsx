@@ -1,4 +1,4 @@
-import React from "react"
+
 import { awrapper } from "../../dummydata"
 
 const Awrapper = () => {

@@ -1,6 +1,6 @@
-import React from "react";
+
 import { Box, Chip, Tooltip } from "@mui/material";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";

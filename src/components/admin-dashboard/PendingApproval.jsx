@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Box, Chip, Tooltip, Button, Stack } from "@mui/material";
+import { Box, Chip, Button, Stack } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { getAuthCookie } from "../auth/index";
 
@@ -8,7 +8,7 @@ const PendingApproval = () => {
   const user = getAuthCookie();
   const [students, setStudents] = useState([]);
 
-  /* ================= FETCH PENDING STUDENTS ================= */
+
   const getPendingStudents = async () => {
     try {
       const res = await axios.get(
@@ -27,12 +27,12 @@ const PendingApproval = () => {
       console.error(err);
     }
   };
-// eslint-disable-next-line react-hooks/exhaustive-deps
+
   useEffect(() => {
     getPendingStudents();
   }, []);
 
-  /* ================= APPROVE ================= */
+
   const approveStudent = async (id) => {
     await axios.put(
       `https://course-project-wd0v.onrender.com/api/users/approve/${id}`,
@@ -57,10 +57,9 @@ const PendingApproval = () => {
         },
       }
     );
-    getPendingStudents(); // 🔥 REFRESH GRID
+    getPendingStudents(); 
   };
 
-  /* ================= COLUMNS ================= */
   const columns = [
     {
       field: "name",

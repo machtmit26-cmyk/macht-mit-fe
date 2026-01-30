@@ -14,28 +14,30 @@ const GetActiveStudents = () => {
       flex: 1,
       minWidth: 180,
     },
- {
-  field: "registeredOn",
-  headerName: "Registered On",
-  minWidth: 160,
-  renderCell: (params) => {
-    const date = params.row?.createdAt;
+    {
+      field: "registeredOn",
+      headerName: "Registered On",
+      minWidth: 160,
+      renderCell: (params) => {
+        const date = params.row?.createdAt;
 
-    if (!date) {
-      return <span>-</span>;
-    }
+        if (!date) {
+          return <span>-</span>;
+        }
 
-    const parsed = new Date(date);
+        const parsed = new Date(date);
 
-    return isNaN(parsed.getTime())
-      ? <span>-</span>
-      : parsed.toLocaleDateString("en-IN", {
-          day: "2-digit",
-          month: "short",
-          year: "numeric",
-        });
-  },
-},
+        return isNaN(parsed.getTime()) ? (
+          <span>-</span>
+        ) : (
+          parsed.toLocaleDateString("en-IN", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+          })
+        );
+      },
+    },
     {
       field: "country",
       headerName: "Country",
@@ -48,7 +50,7 @@ const GetActiveStudents = () => {
       flex: 1,
       minWidth: 180,
     },
-    
+
     {
       field: "email",
       headerName: "Email",
@@ -86,7 +88,7 @@ const GetActiveStudents = () => {
       headerName: "Payment Method",
       minWidth: 160,
     },
-    
+
     {
       field: "status",
       headerName: "Payment Status",
@@ -129,7 +131,7 @@ const GetActiveStudents = () => {
         <Chip
           label={"Active"}
           size="small"
-          sx={{ width: "120px", backgroundColor:"#1E7E34", color:"#ffffff" }}
+          sx={{ width: "120px", backgroundColor: "#1E7E34", color: "#ffffff" }}
         />
       ),
     },

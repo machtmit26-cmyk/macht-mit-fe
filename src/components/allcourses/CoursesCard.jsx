@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./courses.css";
 import { useHistory } from "react-router-dom";
 import Loader from "../home/Loader";

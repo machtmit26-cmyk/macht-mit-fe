@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Heading from "../common/heading/Heading";
 import PriceCard from "../pricing/PriceCard";
 
