@@ -6,7 +6,7 @@ const BlogCard = () => {
       {blog.map((val) => (
         <div className='items shadow'>
           <div className='img'>
-            <img src={val.cover} alt='' />
+            <img src={val.cover} alt='img' />
           </div>
           <div className='text'>
             <div className='admin flexSB'>

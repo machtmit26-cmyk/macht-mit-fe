@@ -37,7 +37,6 @@ const SignupPage = () => {
   const [error, setError] = useState("");
 
   const handleChange = (key, value) => {
-    console.log(key, value);
 
     setForm({ ...form, [key]: value });
   };
@@ -132,7 +131,6 @@ const SignupPage = () => {
           }
         })
         .catch((err) => {
-          console.log(err);
           setToast({
               open: true,
               message:
@@ -141,10 +139,8 @@ const SignupPage = () => {
             });
         });
     } catch (error) {
-      console.log(error);
-    }
 
-    console.log("Signup Payload:", form);
+    }
   };
 
   return (

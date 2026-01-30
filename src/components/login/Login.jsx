@@ -40,7 +40,6 @@ const LoginPage1 = () => {
       axios
         .post("https://course-project-wd0v.onrender.com/api/users/login", { email, password })
         .then((res) => {
-          console.log(res?.data);
           if (res?.status === 200) {
             setAuthCookie(res?.data);
             window.location.href = "/courses";

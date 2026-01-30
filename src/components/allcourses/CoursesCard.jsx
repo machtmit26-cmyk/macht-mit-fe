@@ -38,7 +38,7 @@ const CoursesCard = () => {
             <div className="content flex">
               <div className="left">
                 <div className="img">
-                  <img src={course.cover} alt={course.coursesName} />
+                  <img src={course.cover} alt={course.coursesName||"courses"} />
                 </div>
               </div>
 

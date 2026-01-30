@@ -10,7 +10,7 @@ const Awrapper = () => {
             return (
               <div className='box flex'>
                 <div className='img'>
-                  <img src={val.cover} alt='' />
+                  <img src={val.cover} alt='img' />
                 </div>
                 <div className='text'>
                   <h1>{val.data}</h1>

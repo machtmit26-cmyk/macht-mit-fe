@@ -141,7 +141,6 @@ const EnRollToCourse = () => {
         }, 500);
       })
       .catch((err) => {
-        console.log("catch err", err);
         setToast({
           open: true,
           message: err?.response?.data?.message || "Something went wrong",

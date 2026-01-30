@@ -6,7 +6,7 @@ const TeamCard = () => {
       {team.map((val) => (
         <div className='items shadow'>
           <div className='img'>
-            <img src={val.cover} alt='' />
+            <img src={val.cover} alt='img' />
             <div className='overlay'>
               <i className='fab fa-facebook-f icon'></i>
               

@@ -71,7 +71,7 @@ const UserMenu = () => {
 
         <Divider />
 
-        <MenuItem onClick={() => console.log("Go to My Courses")}>
+        <MenuItem onClick={() =>{}}>
           <SchoolIcon fontSize="small" sx={{ mr: 1 }} />
           My Courses
         </MenuItem>

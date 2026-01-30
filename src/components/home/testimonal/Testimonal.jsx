@@ -14,7 +14,7 @@ const Testimonal = () => {
               <div className='items shadow'>
                 <div className='box flex'>
                   <div className='img'>
-                    <img src={val.cover} alt='' />
+                    <img src={val.cover} alt='img' />
                     <i className='fa fa-quote-left icon'></i>
                   </div>
                   <div className='name'>

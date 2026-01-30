@@ -147,7 +147,6 @@ const GetActiveStudents = () => {
         },
       })
       .then((res) => {
-        console.log("res");
         if (res?.status === 200) {
           setStudents(res?.data);
         }

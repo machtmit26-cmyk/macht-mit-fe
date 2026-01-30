@@ -12,7 +12,7 @@ const OnlineCourses = () => {
               <div className='box'>
                 <div className='img'>
                   <img src={val.cover} />
-                  <img src={val.hoverCover} alt='' className='show' />
+                  <img src={val.hoverCover} alt='courses' className='show' />
                 </div>
                 <h1>{val.courseName}</h1>
                 <span>{val.course}</span>

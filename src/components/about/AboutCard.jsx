@@ -10,7 +10,7 @@ const AboutCard = () => {
       <section className='aboutHome'>
         <div className='container flexSB'>
           <div className='left row'>
-            <img src='./images/4.jpg' alt='' />
+            <img src='./images/4.jpg' alt='img' />
           </div>
           <div className='right row'>
             <Heading  />
@@ -19,7 +19,7 @@ const AboutCard = () => {
                 return (
                   <div className='item flexSB'>
                     <div className='img'>
-                      <img src={val.cover} alt='' />
+                      <img src={val.cover} alt='img' />
                     </div>
                     <div className='text'>
                       <h2>{val.title}</h2>

@@ -18,7 +18,7 @@ const HAbout = () => {
                   <div className='content flex'>
                     <div className='left'>
                       <div className='img'>
-                        <img src={val.cover} alt='' />
+                        <img src={val.cover} alt='course' />
                       </div>
                     </div>
                     <div className='text'>
@@ -36,7 +36,7 @@ const HAbout = () => {
                           <>
                             <div className='box'>
                               <div className='dimg'>
-                                <img src={details.dcover} alt='' />
+                                <img src={details.dcover} alt='img' />
                               </div>
                               <div className='para'>
                                 <h4>{details.name}</h4>
