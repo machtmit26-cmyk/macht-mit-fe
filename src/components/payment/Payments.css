@@ -1,0 +1,327 @@
+.payment-container {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.payment-box {
+  display: flex;
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.payment-methods {
+  width: 30%;
+  background: #f4f4f4;
+  padding: 20px;
+}
+
+.payment-methods button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: none;
+  background: #1eb2a6;
+  color: white;
+  cursor: pointer;
+}
+
+.payment-content {
+  width: 70%;
+  padding: 30px;
+}
+
+.payment-content input,
+.payment-content select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.pay-btn {
+  width: 100%;
+  padding: 12px;
+  background: #1eb2a6;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.payment-methods button:hover{
+
+  background: #000000;
+  color: white;
+ 
+}
+button:hover{
+
+  background: #000000;
+  color: white;
+ 
+}
+
+.upi img {
+  margin: 20px 0;
+}
+
+.wallet button {
+  margin: 10px;
+  padding: 10px 20px;
+}
+/* From Uiverse.io by PriyanshuGupta28 */ 
+.stepper-box {
+  background-color: white;
+  border-radius: 12px;
+  padding: 32px;
+  width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.stepper-step {
+  display: flex;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.stepper-step:last-child {
+  margin-bottom: 0;
+}
+
+.stepper-line {
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  bottom: -32px;
+  width: 2px;
+  background-color: #e2e8f0;
+  z-index: 1;
+}
+
+.stepper-step:last-child .stepper-line {
+  display: none;
+}
+
+.stepper-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  z-index: 2;
+}
+
+.stepper-completed .stepper-circle {
+  background-color: #0f172a;
+  color: white;
+}
+
+.stepper-active .stepper-circle {
+  border: 2px solid #0f172a;
+  color: #0f172a;
+}
+
+.stepper-pending .stepper-circle {
+  border: 2px solid #e2e8f0;
+  color: #94a3b8;
+}
+
+.stepper-content {
+  flex: 1;
+}
+
+.stepper-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.stepper-completed .stepper-title {
+  color: #0f172a;
+}
+
+.stepper-active .stepper-title {
+  color: #0f172a;
+}
+
+.stepper-pending .stepper-title {
+  color: #94a3b8;
+}
+
+.stepper-status {
+  font-size: 13px;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-top: 4px;
+}
+
+.stepper-completed .stepper-status {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.stepper-active .stepper-status {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.stepper-pending .stepper-status {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.stepper-time {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.stepper-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.stepper-button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stepper-button-primary {
+  background-color: #0f172a;
+  color: white;
+  border-color: #0f172a;
+}
+/* ===============================
+   MOBILE & TABLET RESPONSIVE
+   =============================== */
+
+@media (max-width: 992px) {
+  .payment-box {
+    flex-direction: column;
+  }
+
+  .payment-methods,
+  .payment-content {
+    width: 100%;
+  }
+
+  .payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .payment-methods button {
+    width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .payment-container {
+    padding: 40px 10px;
+  }
+
+  .payment-box {
+    box-shadow: none;
+  }
+
+  .payment-methods {
+    padding: 15px;
+  }
+
+  .payment-methods button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .payment-content {
+    padding: 20px 15px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .pay-btn {
+    font-size: 15px;
+  }
+
+  .upi img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stepper-box {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .stepper-step {
+    margin-bottom: 24px;
+  }
+
+  .stepper-circle {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+
+  .stepper-line {
+    left: 16px;
+  }
+
+  .stepper-title {
+    font-size: 14px;
+  }
+
+  .stepper-status {
+    font-size: 12px;
+  }
+
+  .stepper-controls {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .stepper-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.selected-course {
+  background: #f9fdfc;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.selected-course h3 {
+  margin-bottom: 8px;
+  color: #1eb2a6;
+}
+
+.selected-course .price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
+

@@ -1,0 +1,160 @@
+/* =========================
+   CONTACT SECTION FIX
+========================= */
+
+.contacts {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.contacts .container {
+  max-width: 1800px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* LEFT MAP */
+.contacts .left {
+  width: 100%;
+  height: 450px;
+}
+
+.contacts iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+/* RIGHT CONTENT */
+.contacts .right {
+  width: 100%;
+}
+
+/* HEADING + TEXT */
+.contacts h1 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  
+}
+
+.contacts p {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* ADDRESS / EMAIL / PHONE */
+.contacts .items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+  
+}
+
+.contacts .box h4 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contacts .box p {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* FORM */
+.contacts form {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* NAME + EMAIL */
+.contacts .flexSB {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.contacts input,
+.contacts textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.contacts textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+/* BUTTON */
+.contacts .primary-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1eb2a6;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.contacts .primary-btn:hover {
+  background: #000;
+}
+
+/* SOCIAL */
+.contacts h3 {
+  margin-top: 30px;
+  font-weight: 500;
+}
+
+.contacts span {
+  color: #1eb2a6;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE FIX
+========================= */
+
+@media (max-width: 992px) {
+  .contacts .container {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts .left {
+    height: 350px;
+  }
+
+  .contacts .items {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .contacts .items {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts .flexSB {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts h1 {
+    font-size: 26px;
+  }
+}
