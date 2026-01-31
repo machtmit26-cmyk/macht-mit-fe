@@ -95,7 +95,7 @@ const UserMenu = () => {
         }}
         onConfirm={() => {
           removeAuthCookie();
-          history.push("/login")
+          history("/login")
         }}
       />
     </>
