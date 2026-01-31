@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Footer from "../common/footer/Footer";
 import axios from "axios";
+
 import {
   Box,
   Button,
@@ -15,11 +16,13 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { setAuthCookie } from "../auth";
 import AppToast from "../toast/AppToast";
+import { useHistory } from "react-router-dom";
 
 const PRIMARY_COLOR = "#20b2a6";
 const PAGE_BG = "#f2f2f2";
 
 const LoginPage1 = () => {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
