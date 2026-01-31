@@ -13,10 +13,8 @@ import SchoolIcon from "@mui/icons-material/School";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LogoutDialog from "./LogoutModal";
 import { getAuthCookie, removeAuthCookie } from "../../auth";
-import { useHistory } from "react-router-dom";
 
 const UserMenu = () => {
-  const history=useHistory()
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const [openLogoutModal, setOpenLogoutModal] = useState(false);
@@ -95,7 +93,7 @@ const UserMenu = () => {
         }}
         onConfirm={() => {
           removeAuthCookie();
-          history.push("/login")
+          window.location.href="/login"
         }}
       />
     </>

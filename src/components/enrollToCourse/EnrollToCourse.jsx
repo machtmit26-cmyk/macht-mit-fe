@@ -14,7 +14,6 @@ import {
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { getAuthCookie } from "../auth";
-import { useHistory } from "react-router-dom";
 
 const PRIMARY_COLOR = "#20b2a6";
 const MATERIAL_COST = 175;
@@ -22,7 +21,6 @@ const MATERIAL_COST = 175;
 const EnRollToCourse = () => {
   const location = useLocation();
   const user = getAuthCookie();
-  const history=useHistory()
   const { courseName, fullPrice } = location?.state || {};
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -139,7 +137,7 @@ const EnRollToCourse = () => {
             severity: "success",
           });
         setTimeout(() => {
-         history.push("/")
+          window.location.href = "/";
         }, 500);
       })
       .catch((err) => {
