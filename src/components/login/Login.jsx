@@ -41,7 +41,10 @@ const LoginPage1 = () => {
     setError("");
     try {
       axios
-        .post("https://course-project-wd0v.onrender.com/api/users/login", { email, password })
+        .post("https://course-project-wd0v.onrender.com/api/users/login", {
+          email,
+          password,
+        })
         .then((res) => {
           if (res?.status === 200) {
             setAuthCookie(res?.data);
@@ -167,12 +170,7 @@ const LoginPage1 = () => {
 };
 
 function LoginPage() {
-  return (
-    <>
-      <LoginPage1 />
-      <Footer />
-    </>
-  );
+  return <LoginPage1 />;
 }
 
 export default LoginPage;
