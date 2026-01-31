@@ -15,10 +15,11 @@ import axios from "axios";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import { countriesList } from "./countris";
 import AppToast from "../toast/AppToast";
+import { useHistory } from "react-router-dom";
 
 const generateCaptchaText = () =>
   Math.random().toString(36).substring(2, 8).toUpperCase();
-
+const history = useHistory();
 const SignupPage = () => {
   const canvasRef = useRef(null);
 
@@ -37,7 +38,6 @@ const SignupPage = () => {
   const [error, setError] = useState("");
 
   const handleChange = (key, value) => {
-
     setForm({ ...form, [key]: value });
   };
   const [toast, setToast] = useState({
@@ -83,7 +83,7 @@ const SignupPage = () => {
     setCaptchaInput("");
     drawCaptcha(text);
   };
-// eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     refreshCaptcha();
   }, []);
@@ -115,7 +115,10 @@ const SignupPage = () => {
     setError("");
     try {
       axios
-        .post("https://course-project-wd0v.onrender.com/api/users/register", form)
+        .post(
+          "https://course-project-wd0v.onrender.com/api/users/register",
+          form,
+        )
         .then((res) => {
           if (res?.status === 201) {
             setToast({
@@ -125,22 +128,19 @@ const SignupPage = () => {
               severity: "success",
             });
             setTimeout(() => {
-              window.location.href = "/courses";
+              history.push("/courses");
             }, 1000);
           } else {
           }
         })
         .catch((err) => {
           setToast({
-              open: true,
-              message:
-                "Something went wrong!. please try again",
-              severity: "success",
-            });
+            open: true,
+            message: "Something went wrong!. please try again",
+            severity: "success",
+          });
         });
-    } catch (error) {
-
-    }
+    } catch (error) {}
   };
 
   return (
