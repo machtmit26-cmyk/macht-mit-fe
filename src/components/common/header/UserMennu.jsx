@@ -34,11 +34,11 @@ const UserMenu = () => {
             fontWeight: 600,
           }}
         >
-          {user.name.charAt(0)}
+          {user?.name?.charAt(0)}
         </Avatar>
 
         <Typography sx={{ ml: 1, color: "#fff", fontWeight: 500 }}>
-          {user.name}
+          {user?.name}
         </Typography>
 
         <IconButton
@@ -65,9 +65,9 @@ const UserMenu = () => {
         transformOrigin={{ vertical: "top", horizontal: "right" }}
       >
         <Box px={2} py={1}>
-          <Typography fontWeight={600}>{user.name}</Typography>
+          <Typography fontWeight={600}>{user?.name}</Typography>
           <Typography variant="body2" color="text.secondary">
-            {user.email}
+            {user?.email}
           </Typography>
         </Box>
 
@@ -95,7 +95,9 @@ const UserMenu = () => {
         }}
         onConfirm={() => {
           removeAuthCookie();
-          history("/login")
+          setAnchorEl(null);
+          setOpenLogoutModal(false);
+          window.location.href="/courses";
         }}
       />
     </>
