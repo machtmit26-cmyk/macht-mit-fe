@@ -12,37 +12,37 @@ import Home from "./components/home/Home";
 import Payments from "./components/payment/Payments";
 import AdminLogin from "./components/admin/AdminLogin";
 
-import { BrowserRouter, Route, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import LoginPage from "./components/login/Login";
 import AdminDashBoard from "./components/admin-dashboard/AdminDashboard";
 import EnRollToCourse from "./components/enrollToCourse/EnrollToCourse";
 import SignupPage from "./components/signup/Signup";
 
 function App() {
-  const location = useLocation();
-  const hideLayoutRoutes = ["/login"];
-  const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
+  // const location = useLocation();
+  // const hideLayoutRoutes = ["/login"];
+  // const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
 
   return (
     <>
       <Header />
-      <BrowserRouter>
-        {/* PUBLIC */}
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/courses" component={CourseHome} />
-        <Route exact path="/team" component={Team} />
-        <Route exact path="/pricing" component={Pricing} />
-        <Route exact path="/payments" component={Payments} />
-        <Route exact path="/contact" component={Contact} />
-        <Route exact path="/login" component={LoginPage} />
-        <Route exact path="/admin-dashboard" component={AdminDashBoard} />
-        <Route exact path="/enroll" component={EnRollToCourse} />
-        <Route exact path="/signup" component={SignupPage} />
-        {/* ADMIN */}
-        <Route exact path="/admin" component={AdminLogin} />
-      </BrowserRouter>
-      {!shouldHideLayout && <Footer />}
+        <Routes>
+          {/* PUBLIC */}
+          <Route  path="/" element={<Home/>} />
+          <Route  path="/about" element={<About/>} />
+          <Route  path="/courses" element={<CourseHome/>} />
+          <Route  path="/team" element={<Team/>} />
+          <Route  path="/pricing" element={<Pricing/>} />
+          <Route  path="/payments" element={<Payments/>} />
+          <Route  path="/contact" element={<Contact/>} />
+          <Route  path="/login" element={<LoginPage/>} />
+          <Route  path="/admin-dashboard" element={<AdminDashBoard/>} />
+          <Route  path="/enroll" element={<EnRollToCourse/>} />
+          <Route  path="/signup" element={<SignupPage/>} />
+          {/* ADMIN */}
+          <Route  path="/admin" element={<AdminLogin/>} />
+        </Routes>
+      <Footer />
     </>
   );
 }
