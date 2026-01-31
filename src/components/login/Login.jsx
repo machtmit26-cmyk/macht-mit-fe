@@ -45,7 +45,7 @@ const LoginPage1 = () => {
         .then((res) => {
           if (res?.status === 200) {
             setAuthCookie(res?.data);
-            window.location.href = "/courses";
+            history.push("/courses");
           }
         })
         .catch((err) => {
