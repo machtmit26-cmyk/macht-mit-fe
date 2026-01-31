@@ -15,14 +15,13 @@ import axios from "axios";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import { countriesList } from "./countris";
 import AppToast from "../toast/AppToast";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const generateCaptchaText = () =>
   Math.random().toString(36).substring(2, 8).toUpperCase();
-const history = useHistory();
 const SignupPage = () => {
   const canvasRef = useRef(null);
-
+  const history = useNavigate();
   const [form, setForm] = useState({
     name: "",
     email: "",
