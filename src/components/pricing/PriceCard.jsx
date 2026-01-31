@@ -1,11 +1,11 @@
 import { price } from "../../dummydata";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { isAuthenticated } from "../auth";
 import AppToast from "../toast/AppToast";
 import { useState } from "react";
 
 const PriceCard = () => {
-  const history = useHistory();
+  const history = useNavigate();
   const [toast, setToast] = useState({
     open: false,
     message: "",

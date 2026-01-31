@@ -11,14 +11,8 @@ import Home from "./components/home/Home";
 
 import Payments from "./components/payment/Payments";
 import AdminLogin from "./components/admin/AdminLogin";
-import AdminDashboard from "./components/admin/AdminDashboard";
-import ProtectedRoute from "./components/admin/ProtectedRoute";
 
-import {
-  Switch,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter, Route, useLocation } from "react-router-dom";
 import LoginPage from "./components/login/Login";
 import AdminDashBoard from "./components/admin-dashboard/AdminDashboard";
 import EnRollToCourse from "./components/enrollToCourse/EnrollToCourse";
@@ -32,7 +26,7 @@ function App() {
   return (
     <>
       <Header />
-      <Switch>
+      <BrowserRouter>
         {/* PUBLIC */}
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
@@ -45,15 +39,9 @@ function App() {
         <Route exact path="/admin-dashboard" component={AdminDashBoard} />
         <Route exact path="/enroll" component={EnRollToCourse} />
         <Route exact path="/signup" component={SignupPage} />
-
         {/* ADMIN */}
         <Route exact path="/admin" component={AdminLogin} />
-        <ProtectedRoute
-          exact
-          path="/admin/dashboard"
-          component={AdminDashboard}
-        />
-      </Switch>
+      </BrowserRouter>
       {!shouldHideLayout && <Footer />}
     </>
   );

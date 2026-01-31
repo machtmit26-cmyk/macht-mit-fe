@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./Payment.css";
 
 const PRICE_URL =
@@ -7,7 +7,7 @@ const PRICE_URL =
 
 const Payment = () => {
   const location = useLocation();
-  const history = useHistory();
+  const history = useNavigate();
 
   const selectedPlanName = location.state?.planName || "";
 

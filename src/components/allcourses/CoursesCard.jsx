@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./courses.css";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Loader from "../home/Loader";
 import Heading from "../common/heading/Heading";
 import AppToast from "../toast/AppToast";
@@ -11,7 +11,7 @@ import { coursesCard } from "../../dummydata";
 
 const CoursesCard = () => {
   
-  const history = useHistory();
+  const history = useNavigate();
  const [courses] = useState(coursesCard);
 
  // 👈 DIRECT DATA

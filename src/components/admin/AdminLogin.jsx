@@ -1,10 +1,10 @@
 import { useState } from "react";
 import api from "../../services/api";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./admin.css";
 
 const AdminLogin = () => {
-  const history = useHistory();
+  const history = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
