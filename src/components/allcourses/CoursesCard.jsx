@@ -80,7 +80,7 @@ const CoursesCard = () => {
               className="outline-btn"
               onClick={() => {
                 if (isAuthenticated()) {
-                  history.push("/enroll", {
+                  history("/enroll", {
                     courseName: course.coursesName,
                     fullPrice: course.priceAll?.replace(/[^\d]/g, ""),
                     monthlyPrice: course.pricePer,

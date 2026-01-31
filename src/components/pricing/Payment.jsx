@@ -81,7 +81,7 @@ const Payment = () => {
 
           <button
             className="cancel-btn"
-            onClick={() => history.goBack()}
+            onClick={() => history()}
           >
             Cancel Payment
           </button>

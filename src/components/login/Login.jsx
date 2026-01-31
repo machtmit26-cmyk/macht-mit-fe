@@ -48,7 +48,7 @@ const LoginPage1 = () => {
         .then((res) => {
           if (res?.status === 200) {
             setAuthCookie(res?.data);
-            history.push("/courses");
+            history("/courses");
           }
         })
         .catch((err) => {

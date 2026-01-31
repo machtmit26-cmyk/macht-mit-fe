@@ -127,7 +127,7 @@ const SignupPage = () => {
               severity: "success",
             });
             setTimeout(() => {
-              history.push("/courses");
+              history("/courses");
             }, 1000);
           } else {
           }
