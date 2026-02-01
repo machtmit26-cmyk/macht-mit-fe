@@ -20,7 +20,7 @@ const AdminLogin = () => {
       localStorage.setItem("adminToken", res.data.token);
 
       // ✅ CORRECT ROUTE
-      history.push("/admin/dashboard");
+      history("/admin/dashboard");
     } catch (err) {
       alert("Invalid admin credentials");
     }

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Footer from "../common/footer/Footer";
 import axios from "axios";
 
@@ -16,12 +16,14 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { setAuthCookie } from "../auth";
 import AppToast from "../toast/AppToast";
+import { AuthContext } from "../auth/authcontext";
 import { useNavigate } from "react-router-dom";
 
 const PRIMARY_COLOR = "#20b2a6";
 const PAGE_BG = "#f2f2f2";
 
 const LoginPage1 = () => {
+  const { setUserDetails } = useContext(AuthContext);
   const history = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -48,7 +50,8 @@ const LoginPage1 = () => {
         .then((res) => {
           if (res?.status === 200) {
             setAuthCookie(res?.data);
-            window.location.href="/courses";
+            setUserDetails(res?.data);
+            history("/courses");
           }
         })
         .catch((err) => {
