@@ -8,7 +8,7 @@ const Hprice = () => {
 
   useEffect(() => {
     fetch(
-      "https://raw.githubusercontent.com/Kaustubh200429/macht-mit-Price/main/Price.json"
+      "https://raw.githubusercontent.com/Kaustubh200429/macht-mit-Price/main/Price.json",
     )
       .then((res) => res.json())
       .then((data) => {
@@ -20,18 +20,13 @@ const Hprice = () => {
         setLoading(false);
       });
   }, []);
- 
+  
   return (
     <section className="hprice padding">
       <Heading subtitle="OUR PRICING" title="Pricing & Packages" />
-
       <div className="price container grid">
         {loading && <p>Loading pricing plans...</p>}
-
-        {!loading &&
-          prices.map((item, index) => (
-            <PriceCard key={index} item={item} />
-          ))}
+        {!loading && <PriceCard />}
       </div>
     </section>
   );
