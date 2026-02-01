@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   Avatar,
   Box,
@@ -14,9 +14,11 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import LogoutDialog from "./LogoutModal";
 import { getAuthCookie, removeAuthCookie } from "../../auth";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../auth/authcontext";
 
 const UserMenu = () => {
   const history=useNavigate()
+  const { setUserDetails}=useContext(AuthContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const [openLogoutModal, setOpenLogoutModal] = useState(false);
@@ -96,8 +98,9 @@ const UserMenu = () => {
         onConfirm={() => {
           removeAuthCookie();
           setAnchorEl(null);
+          setUserDetails(null);
           setOpenLogoutModal(false);
-          window.location.href="/courses";
+          history("/login");
         }}
       />
     </>

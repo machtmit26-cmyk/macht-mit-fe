@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Head from "./Head";
 import "./header.css";
 import UserMenu from "./UserMennu";
 import { getAuthCookie, isAuthenticated } from "../../auth";
+import { AuthContext } from "../../auth/authcontext";
 
 const Header = () => {
+  const { userDetails } = useContext(AuthContext);
   const [click, setClick] = useState(false);
   const user = getAuthCookie();
   return (
@@ -26,7 +28,7 @@ const Header = () => {
             <li>
               <Link to="/about">About</Link>
             </li>
-           
+
             <li>
               <Link to="/pricing">FAQ'S</Link>
             </li>
@@ -34,12 +36,13 @@ const Header = () => {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
-            {user?.role === "admin" && (
-              <li>
-                <Link to="/admin-dashboard">Dashboard</Link>
-              </li>
-            )}
-            {!isAuthenticated() && (
+            {(user?.role === "admin" ||
+              userDetails?.role === "admin") && (
+                <li>
+                  <Link to="/admin-dashboard">Dashboard</Link>
+                </li>
+              )}
+            {(!isAuthenticated() || userDetails === null) && (
               <>
                 <li>
                   <Link to="/login">
@@ -54,7 +57,9 @@ const Header = () => {
               </>
             )}
           </ul>
-          <div className="start">{isAuthenticated() && <UserMenu />}</div>
+          <div className="start">
+            {(isAuthenticated() || !!userDetails?.id) && <UserMenu />}
+          </div>
           <button className="toggle" onClick={() => setClick(!click)}>
             {click ? (
               <i className="fa fa-times"> </i>
