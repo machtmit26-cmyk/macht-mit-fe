@@ -1,6 +1,5 @@
 "use client";
 import { useContext, useState } from "react";
-import Footer from "../common/footer/Footer";
 import axios from "axios";
 
 import {
@@ -11,6 +10,8 @@ import {
   IconButton,
   InputAdornment,
   Paper,
+  CircularProgress,
+  Backdrop,
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
@@ -27,6 +28,7 @@ const LoginPage1 = () => {
   const history = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loader, setLoader] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [toast, setToast] = useState({
@@ -40,6 +42,7 @@ const LoginPage1 = () => {
       setError("Email and Password are required");
       return;
     }
+    setLoader(true);
     setError("");
     try {
       axios
@@ -51,10 +54,12 @@ const LoginPage1 = () => {
           if (res?.status === 200) {
             setAuthCookie(res?.data);
             setUserDetails(res?.data);
+            setLoader(false);
             history("/courses");
           }
         })
         .catch((err) => {
+          setLoader(false);
           setToast({
             open: true,
             message:
@@ -63,7 +68,9 @@ const LoginPage1 = () => {
             severity: "error",
           });
         });
-    } catch (error) {}
+    } catch (error) {
+      setLoader(false);
+    }
   };
 
   return (
@@ -73,6 +80,7 @@ const LoginPage1 = () => {
       alignItems="center"
       justifyContent="center"
       bgcolor={PAGE_BG}
+      position={"relative"}
     >
       <Paper
         elevation={2}
@@ -102,7 +110,7 @@ const LoginPage1 = () => {
               borderColor: PRIMARY_COLOR,
             },
           }}
-          autoComplete="off"
+          // autoComplete="off"
         />
 
         <TextField
@@ -168,6 +176,14 @@ const LoginPage1 = () => {
         message={toast.message}
         severity={toast.severity}
       />
+      {loader && (
+       <Backdrop open={loader}>
+         <CircularProgress
+          color="success"
+          sx={{ zIndex: 999, position: "absolute", top: "52%", left: "50%" }}
+        />
+       </Backdrop>
+      )}
     </Box>
   );
 };

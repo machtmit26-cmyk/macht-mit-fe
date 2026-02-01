@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { getAuthCookie } from "../auth";
+import dayjs from "dayjs";
 
 const GetActiveStudents = () => {
   const user = getAuthCookie();
@@ -15,28 +16,14 @@ const GetActiveStudents = () => {
       minWidth: 180,
     },
     {
-      field: "registeredOn",
-      headerName: "Registered On",
+      field: "enrolledDate",
+      headerName: "Enrolled Date",
       minWidth: 160,
-      renderCell: (params) => {
-        const date = params.row?.createdAt;
-
-        if (!date) {
-          return <span>-</span>;
-        }
-
-        const parsed = new Date(date);
-
-        return isNaN(parsed.getTime()) ? (
-          <span>-</span>
-        ) : (
-          parsed.toLocaleDateString("en-IN", {
-            day: "2-digit",
-            month: "short",
-            year: "numeric",
-          })
-        );
-      },
+      renderCell: (params) => (
+        <Tooltip title={params?.value}>
+          <Box>{!!params?.value  ?dayjs(params?.value).format("DD-MMM-YYYY"):"--"}</Box>
+        </Tooltip>
+      ),        
     },
     {
       field: "country",

@@ -16,6 +16,7 @@
     "ajv": "^6.12.6",
     "ajv-keywords": "^3.5.2",
     "axios": "^1.13.2",
+    "dayjs": "^1.11.19",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.562.0",
     "material-icons": "^1.10.11",
