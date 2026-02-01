@@ -14,9 +14,11 @@ const PriceCard = () => {
   const handleEnroll = (course) => {
     if (isAuthenticated()) {
       history("/enroll", {
-        courseName: course.name,
-        fullPrice: course.price?.replace(/[^\d]/g, ""),
-        monthlyPrice: course.pricePer,
+        state: {
+          courseName: course.name,
+          fullPrice: course.price?.replace(/[^\d]/g, ""),
+          monthlyPrice: course.pricePer,
+        },
       });
       return;
     }

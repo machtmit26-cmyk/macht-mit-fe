@@ -17,12 +17,13 @@ import { getAuthCookie } from "../auth";
 import { useNavigate } from "react-router-dom";
 
 const PRIMARY_COLOR = "#20b2a6";
-const MATERIAL_COST = 175;
+const MATERIAL_COST = 500;
 
 const EnRollToCourse = () => {
   const location = useLocation();
   const user = getAuthCookie();
   const history=useNavigate()
+  
   const { courseName, fullPrice } = location?.state || {};
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -123,6 +124,7 @@ const EnRollToCourse = () => {
         referenceNumber: form.referenceNumber,
         gstNo: form.gstNo,
         executiveName: form.executiveName,
+        enrolledDate:new Date().toISOString().split("T")[0]
       },
     };
     axios

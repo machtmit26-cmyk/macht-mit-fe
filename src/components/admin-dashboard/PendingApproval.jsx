@@ -43,14 +43,12 @@ const PendingApproval = () => {
         },
       }
     );
-    getPendingStudents(); // 🔥 REFRESH GRID
+    getPendingStudents(); 
   };
 
-  /* ================= REJECT ================= */
   const rejectStudent = async (id) => {
     await axios.put(
       `https://course-project-wd0v.onrender.com/api/users/reject/${id}`,
-      {},
       {
         headers: {
           Authorization: `Bearer ${user?.token}`,

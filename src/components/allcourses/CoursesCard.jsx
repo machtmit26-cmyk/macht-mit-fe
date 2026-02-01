@@ -80,11 +80,11 @@ const CoursesCard = () => {
               className="outline-btn"
               onClick={() => {
                 if (isAuthenticated()) {
-                  history("/enroll", {
+                  history("/enroll", {state:{
                     courseName: course.coursesName,
                     fullPrice: course.priceAll?.replace(/[^\d]/g, ""),
                     monthlyPrice: course.pricePer,
-                  });
+                  }});
                   return;
                 }
                 setToast({
