@@ -62,22 +62,10 @@ const StudentTabs = () => {
           iconPosition="start"
           label="Active Students"
         />
-        <Tab
-          icon={<CancelOutlinedIcon fontSize="small" />}
-          iconPosition="start"
-          label="Rejected"
-        />
-        <Tab
-          icon={<HourglassEmptyOutlinedIcon fontSize="small" />}
-          iconPosition="start"
-          label="New / Pending Approval"
-        />
       </Tabs>
 
       <Box sx={{ p: 3 }}>
         {value === 0 && <GetActiveStudents />}
-        {value === 1 && <RejectedStudents />}
-        {value === 2 && <PendingApproval />}
       </Box>
     </Box>
   );

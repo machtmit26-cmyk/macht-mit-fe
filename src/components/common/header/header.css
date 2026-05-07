@@ -100,3 +100,9 @@ header ul li a:hover {
 color: #000000;
 transition: 0.5s ease-in-out;
 }
+
+.active
+{
+  color: #1eb2a6;
+  text-decoration: underline;
+}

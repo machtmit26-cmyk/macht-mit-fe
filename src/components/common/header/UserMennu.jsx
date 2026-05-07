@@ -17,12 +17,12 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../auth/authcontext";
 
 const UserMenu = () => {
-  const history=useNavigate()
-  const { setUserDetails}=useContext(AuthContext);
+  const history = useNavigate();
+  const {userDetails, setUserDetails } = useContext(AuthContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const [openLogoutModal, setOpenLogoutModal] = useState(false);
-  const user = getAuthCookie()
+  const user = getAuthCookie();
 
   return (
     <>
@@ -74,11 +74,12 @@ const UserMenu = () => {
         </Box>
 
         <Divider />
-
-        <MenuItem onClick={() =>{}}>
-          <SchoolIcon fontSize="small" sx={{ mr: 1 }} />
-          My Courses
-        </MenuItem>
+        {(user?.role !== "admin" || userDetails?.role !== "admin") && (
+          <MenuItem onClick={() => {}}>
+            <SchoolIcon fontSize="small" sx={{ mr: 1 }} />
+            My Courses
+          </MenuItem>
+        )}
 
         <MenuItem
           onClick={() => {

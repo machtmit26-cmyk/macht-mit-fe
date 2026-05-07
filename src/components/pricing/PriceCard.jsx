@@ -33,7 +33,7 @@ const PriceCard = () => {
   return (
     <>
       {price.map((val, index) => (
-        <div className="items shadow" key={index}>
+        <div className="items shadow" key={index} style={{width:"400px"}}>
           <h4>{val.name}</h4>
           <h1>{val.price}</h1>
 
