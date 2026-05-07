@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import  { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
 import Head from "./Head";
 import "./header.css";
 import UserMenu from "./UserMennu";
@@ -20,39 +20,43 @@ const Header = () => {
             onClick={() => setClick(false)}
           >
             <li>
-              <Link to="/">Home</Link>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <Link to="/courses">All Courses</Link>
+              <NavLink to="/courses">All Courses</NavLink>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <NavLink to="/about">About</NavLink>
             </li>
 
             <li>
-              <Link to="/pricing">FAQ'S</Link>
+              <NavLink to="/pricing">FAQ'S</NavLink>
             </li>
 
             <li>
-              <Link to="/contact">Contact</Link>
+              <NavLink to="/contact">Contact</NavLink>
             </li>
-            {(user?.role === "admin" ||
-              userDetails?.role === "admin") && (
+            {(user?.role === "admin" || userDetails?.role === "admin") && (
+              <>
                 <li>
-                  <Link to="/admin-dashboard">Dashboard</Link>
+                  <NavLink to="/admin-dashboard">Dashboard</NavLink>
                 </li>
-              )}
+                <li>
+                  <NavLink to="/analytics">Analytics</NavLink>
+                </li>
+              </>
+            )}
             {(!isAuthenticated() || userDetails === null) && (
               <>
                 <li>
-                  <Link to="/login">
+                  <NavLink to="/login">
                     <div className="get">Login</div>
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/signup">
+                  <NavLink to="/signup">
                     <div className="get">Sign Up</div>
-                  </Link>
+                  </NavLink>
                 </li>
               </>
             )}

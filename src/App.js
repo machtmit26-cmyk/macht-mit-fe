@@ -17,6 +17,7 @@ import LoginPage from "./components/login/Login";
 import AdminDashBoard from "./components/admin-dashboard/AdminDashboard";
 import EnRollToCourse from "./components/enrollToCourse/EnrollToCourse";
 import SignupPage from "./components/signup/Signup";
+import Analytics from "./components/analytics/Analytics";
 
 function App() {
   // const location = useLocation();
@@ -41,6 +42,7 @@ function App() {
           <Route  path="/signup" element={<SignupPage/>} />
           {/* ADMIN */}
           <Route  path="/admin" element={<AdminLogin/>} />
+          <Route path="/analytics" element={<Analytics/>}/>
         </Routes>
       <Footer />
     </>

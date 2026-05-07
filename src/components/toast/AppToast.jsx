@@ -16,7 +16,7 @@ const AppToast = ({
   return (
     <Snackbar
       open={open}
-      autoHideDuration={duration}
+      autoHideDuration={3000}
       onClose={handleClose}
       anchorOrigin={position}
     >

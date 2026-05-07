@@ -24,7 +24,7 @@ const Hprice = () => {
   return (
     <section className="hprice padding">
       <Heading subtitle="OUR PRICING" title="Pricing & Packages" />
-      <div className="price container grid">
+      <div className="price container grid" style={{display:"flex", flexWrap:"wrap", rowGap:"20px"}}>
         {loading && <p>Loading pricing plans...</p>}
         {!loading && <PriceCard />}
       </div>
